@@ -9,10 +9,11 @@ export default plugin(
         "--stripes-rgb": "0 0 0",
         "--stripes-angle": "-45deg",
         "--stripes-opacity": "1",
+        "--stripes-size": "20px",
       },
       "@keyframes slide": {
         from: { transform: "translateX(0)" },
-        to: { transform: "translateX(20px)" },
+        to: { transform: "translateX(var(--stripes-size))" },
       },
     });
 
@@ -30,7 +31,7 @@ export default plugin(
         top: "0",
         right: "0",
         height: "100%",
-        width: "calc(100% + 20px)",
+        width: "calc(100% + var(--stripes-size))",
         content: "''",
         backgroundImage: `linear-gradient(
         var(--stripes-angle),
@@ -39,7 +40,7 @@ export default plugin(
         var(--stripes-color) 45% 55%,
         transparent 55% 95%,
         var(--stripes-color) 95%)`,
-        backgroundSize: "20px 20px",
+        backgroundSize: "var(--stripes-size) var(--stripes-size)",
         animation: "slide 1s infinite linear",
       },
     });
@@ -64,5 +65,28 @@ export default plugin(
         values: theme("opacity"),
       },
     );
+
+    // Support for sizes
+    matchUtilities(
+      {
+        "stripes-size": (value) => ({
+          "--stripes-size": value,
+        }),
+      },
+      {
+        values: theme("stripesSize"),
+      },
+    );
+  },
+  {
+    // Customising the user's theme
+    theme: {
+      stripesSize: {
+        sm: "12px",
+        md: "20px",
+        lg: "30px",
+        xl: "40px",
+      },
+    },
   },
 );
