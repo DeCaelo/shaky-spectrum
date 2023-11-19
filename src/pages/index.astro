@@ -4,16 +4,26 @@ import Layout from "~layouts/base.astro";
 
 <Layout>
   <div class="m-8 grid gap-4">
-    <!-- "Default" stripes -->
-    <div class="stripes h-16 w-56 rounded-lg bg-pink-600"></div>
+    <!-- Black stripes -->
+    <div class="flex flex-wrap gap-4">
+      <div class="stripes h-16 w-20 rounded-lg bg-pink-600"></div>
+      <div class="stripes h-16 w-20 rounded-lg bg-pink-600 stripes-opacity-75">
+      </div>
+      <div class="stripes h-16 w-20 rounded-lg bg-pink-600 stripes-opacity-50">
+      </div>
+      <div class="stripes h-16 w-20 rounded-lg bg-pink-600 stripes-opacity-25">
+      </div>
+    </div>
+
     <!-- White stripes -->
-    <div class="stripes stripes-white h-16 w-56 rounded-lg bg-pink-600"></div>
-    <!-- Inverted stripes -->
-    <div class="stripes stripes-reverse h-16 w-56 rounded-lg bg-pink-600"></div>
-    <!-- Inverted & white stripes -->
-    <div
-      class="stripes stripes-reverse stripes-white h-16 w-56 rounded-lg bg-pink-600"
-    >
+    <div class="flex flex-wrap gap-4 stripes-white">
+      <div class="stripes h-16 w-20 rounded-lg bg-pink-600"></div>
+      <div class="stripes h-16 w-20 rounded-lg bg-pink-600 stripes-opacity-75">
+      </div>
+      <div class="stripes h-16 w-20 rounded-lg bg-pink-600 stripes-opacity-50">
+      </div>
+      <div class="stripes h-16 w-20 rounded-lg bg-pink-600 stripes-opacity-25">
+      </div>
     </div>
   </div>
 </Layout>
