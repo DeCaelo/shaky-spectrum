@@ -3,11 +3,17 @@ import Layout from "~layouts/base.astro";
 ---
 
 <Layout>
-  <div class="m-8">
-    <button
-      class="stripes rounded-lg bg-pink-600 px-8 py-4 font-semibold text-white hover:bg-pink-500"
+  <div class="m-8 grid gap-4">
+    <!-- "Default" stripes -->
+    <div class="stripes h-16 w-56 rounded-lg bg-pink-600"></div>
+    <!-- White stripes -->
+    <div class="stripes stripes-white h-16 w-56 rounded-lg bg-pink-600"></div>
+    <!-- Inverted stripes -->
+    <div class="stripes stripes-reverse h-16 w-56 rounded-lg bg-pink-600"></div>
+    <!-- Inverted & white stripes -->
+    <div
+      class="stripes stripes-reverse stripes-white h-16 w-56 rounded-lg bg-pink-600"
     >
-      Stripes behind text
-    </button>
+    </div>
   </div>
 </Layout>
